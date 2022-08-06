@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body { /*default body style (black Verdana)*/
-  font-family:Verdana;
+  font-family:Serif;
   color:#000000; 
 }
 
@@ -56,4 +56,11 @@ body { /*default body style (black Verdana)*/
   .menu, .main, .right {
     width: 100%;
   }
+}
+
+/* .search-bar{
+  
+} */
+.background{
+  background-color:#DFEDEA ;
 }
