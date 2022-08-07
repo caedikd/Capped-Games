@@ -11,7 +11,7 @@
   <!--script type="text/javascript" src="js/paper-full.js"></script-->
 
   <!-- add Bootstrap 4 (from https://getbootstrap.com/docs/4.0/getting-started/download/)-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
   <!-- add jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -75,7 +75,7 @@
       /* Custom */
       .gamecard {
         width: 300px;
-        height: 600px;
+        height: 100%;
         text-align: center;
       }
 
@@ -112,8 +112,9 @@
         vertical-align: middle;
         font-weight: bold;
         font-size: 30px;
-        float: left;
-        margin-left: 32px;
+        margin: auto;
+        /*margin-left: 32px;*/
+        
       }
       .user-score {
         background-color: #00306f;
@@ -126,8 +127,7 @@
         vertical-align: middle;
         font-weight: bold;
         font-size: 30px;
-        float: right;
-        margin-right: 32px;
+        margin: auto;
       }
 
       .score-0-20 {
@@ -199,6 +199,21 @@
       </section>
     
       <div class="album py-5 bg-light">
+
+        <div class="dropdown-menu d-block position-static">
+          <form class="p-2 mb-2 border-bottom">
+            <label class="form-label">Filter titles:</label>
+            <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" id="customSwitch1">
+              <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+            </div>
+            
+            
+            <input type="search" class="form-control" autocomplete="false" placeholder="Filter search...">
+          </form>
+        </div>
+
+        <!--Card area-->
         <div class="container">
           <div class="row">
 
@@ -211,16 +226,23 @@
                 </div>
 
                 <div class="card-body">
-                  <h5 class="card-title">Devil Survivor 2: Record Breaker</h5>
+                  <h5 class="card-title"> <a href="index.html">Devil Survivor 2: Record Breaker</a></h5>
                   <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2012</h6>
                   <h6 class="card-subtitle mb-2 text-muted text-platforms">3DS</h6>
                   <p class="card-text">Total coverage score:</p>
-                  <div>
-                    <div class="critic-score score-90-100">
-                      <span>100</span>
+
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-90-100">
+                        <span>100</span>
+                      </div>
                     </div>
-                    <div class="user-score score-0-20">
-                      <span>1</span>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-0-20">
+                        <span>1</span>
+                      </div>
                     </div>
                   </div>
                   
@@ -274,9 +296,27 @@
 
               </div>
             </div>
+
+
+            
+          </div>
+
+          <!--Page numbers-->
+          <div class="row">
+            <div class="col">
+              <ul class="pagination pagination-lg flex-wrap">
+                <li class="page-item disabled"><a class="page-link">Previous</a></li>
+                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+
+      
     
     </main>
 
