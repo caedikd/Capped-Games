@@ -75,7 +75,8 @@
       /* Custom */
       .gamecard {
         width: 300px;
-        height: 600px;
+        height: 500px;
+        text-align: center;
       }
 
       .col {
@@ -88,7 +89,7 @@
 
       /*Stackoverflow: https://stackoverflow.com/questions/26101774/how-to-trim-off-image-in-css*/
       div.trim {
-        max-height:200px;
+        max-height:300px;
         max-width: 100%;
         overflow: hidden;
         
@@ -97,7 +98,60 @@
 
       .card-img-top.adjust {
         position: relative;
-        top: -50%;
+        top: -30%;
+      }
+
+      .critic-score {
+        background-color: #00306f;
+        color: #fff;
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
+        border-radius: 6px;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: bold;
+        font-size: 30px;
+        float: left;
+        margin-left: 32px;
+      }
+      .user-score {
+        background-color: #00306f;
+        color: #fff;
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
+        border-radius: 50%;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: bold;
+        font-size: 30px;
+        float: right;
+        margin-right: 32px;
+      }
+
+      .score-0-20 {
+        background-color: #F6757A;
+      }
+
+      .score-21-40 {
+        background-color: #CD7B8A;
+      }
+
+      .score-41-60 {
+        background-color: #7B87AB;
+      }
+
+      .score-61-80 {
+        background-color: #528DBB;
+      }
+
+      .score-81-90 {
+        background-color: #2993CB;
+      }
+
+      .score-90-100 {
+        background-color: #0099DB;
       }
 
     </style>
@@ -159,9 +213,17 @@
                 <div class="card-body">
                   <h5 class="card-title">Devil Survivor 2: Record Breaker</h5>
                   <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2012</h6>
-                  <h7 class="card-subtitle mb-2 text-muted text-platforms">Nintendo 3DS</h7>
-                  <p class="card-text">This is a wider card with supporting text below as a natural 
-                    lead-in to additional content. This content is a little bit longer.</p>
+                  <h6 class="card-subtitle mb-2 text-muted text-platforms">3DS</h6>
+                  <p class="card-text">Total coverage score:</p>
+                  <div>
+                    <div class="critic-score score-90-100">
+                      <span>99</span>
+                    </div>
+                    <div class="user-score score-0-20">
+                      <span>10</span>
+                    </div>
+                  </div>
+                  
                 </div>
 
               </div>
