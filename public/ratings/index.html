@@ -165,6 +165,21 @@
     .score-90-100 {
       background-color: #0099DB;
     }
+
+    .genre-tab {
+      background-color: #D9D9D9;
+      border-top-right-radius: 15px 15px;
+      padding-top: 10px;
+      padding-bottom: 5px;
+      padding-left: 16px;
+      padding-right: 16px;
+      width: 100%
+    }
+
+    .btn-dark:hover, .btn-dark:active, .btn-dark:focus, .btn-dark:not(:disabled):not(.disabled).active {
+      background-color: #766B8E !important;
+      border-color: #fff !important;
+    }
   </style>
 </head>
 
@@ -217,152 +232,87 @@
     <div class="row" style="background-color: aliceblue; margin: auto">
 
       <!--Filter menu-->
-      <div class="col" style="background-color: #bab3cb; min-width: 260px; 
-            max-width: 260px; height: fit-content; margin: 16px; margin-left: 0; padding: 16px;">
-
-        <form class="p-2 mb-2">
-
+      <div class="col" style="background-color: #fff; min-width: 260px; 
+            max-width: 260px; height: fit-content; padding: 0">
+        <div class="mb-2" style="background-color: #766B8E; padding: 4px; padding-left: 16px; color: #fff; margin-bottom: 8px">
           <h3>Filter titles:</h3>
+        </div>
+        <form class="mb-2" style="padding-left: 16px; width: fit-content">
 
           <label for="filter_sort-by">Sort:</label>
 
           <!--Sort by: Player rating, critic rating, game name, year released-->
-          <div class="row" style="margin-bottom: 16px">
-            <div class="col" style="margin-bottom: 8px">
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                  aria-expanded="false" id="filter_sort-by">
-                  Player Rating
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Expert Rating</a>
-                  <a class="dropdown-item" href="#">Game Name</a>
-                  <a class="dropdown-item" href="#">Year Released</a>
-                </div>
-              </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary btn-dark dropdown-toggle" type="button" data-toggle="dropdown"
+              aria-expanded="false" id="filter_sort-by">
+              Player Rating
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Expert Rating</a>
+              <a class="dropdown-item" href="#">Game Name</a>
+              <a class="dropdown-item" href="#">Year Released</a>
             </div>
-
-            <!--Ascending switch-->
-            <div class="col" style="margin: auto">
-              <div class="custom-control custom-switch">
-                <input type="checkbox" checked class="custom-control-input" id="filter_ascending">
-                <label class="custom-control-label" for="filter_ascending">Ascending</label>
-              </div>
-            </div>
+          </div>
+          <div class="custom-control custom-switch mb-2">
+            <input type="checkbox" class="custom-control-input" id="filter_ascending">
+            <label class="custom-control-label" for="filter_ascending">Ascending</label>
           </div>
 
           <!--Sort by: Player rating, critic rating, game name, year released-->
-          <div class="row">
-            <div class="col">
-              <div class="dropdown">
-                <label for="filter_sort-by">Coverage score to display:</label>
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                  aria-expanded="false" id="filter_sort-by">
-                  Total coverage
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Auditory</a>
-                  <a class="dropdown-item" href="#">Cognitive</a>
-                  <a class="dropdown-item" href="#">Motor</a>
-                  <a class="dropdown-item" href="#">Visual</a>
-                </div>
-              </div>
+          <div class="dropdown mb-2">
+            <label for="filter_sort-by">Coverage score to display:</label>
+            <button class="btn btn-secondary btn-dark dropdown-toggle" type="button" data-toggle="dropdown"
+              aria-expanded="false" id="filter_sort-by">
+              Total coverage
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Auditory</a>
+              <a class="dropdown-item" href="#">Cognitive</a>
+              <a class="dropdown-item" href="#">Motor</a>
+              <a class="dropdown-item" href="#">Visual</a>
             </div>
           </div>
 
           <!--Genres-->
-          <div id="genre-list" style="margin-bottom: 16px">
-            <h5>Genres:</h5>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                Action
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                Adventure
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                Competitive (Multiplayer)
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                Competitive (Solo)
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                Cooperative Multiplayer
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                Fighting
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                FPS
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                JRPG
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                Platformer
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                Puzzle
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                RPG
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                Tactical/Strategy
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                Third-Person Shooter
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                Turn-Based
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                Visual Novel
-              </label>
-            </div>
+          <div class="genre-tab">
+            <h5>BY GENRE:</h5>
+          </div>
+          <div class="btn-group-vertical btn-group-toggle mb-2" data-toggle="button" 
+            style="width: 100%;">
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left">
+              <input type="radio" name="options" id="optionADV" autocomplete="off"> ADVENTURE
+            </label>
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
+              <input type="radio" name="options" id="optionCOOP" autocomplete="off"> CO-OP
+            </label>
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
+              <input type="radio" name="options" id="optionPVP" autocomplete="off"> MULTIPLAYER (PVP)
+            </label>
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
+              <input type="radio" name="options" id="optionMYSTERY" autocomplete="off"> MYSTERY
+            </label>
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
+              <input type="radio" name="options" id="optionPLAT" autocomplete="off"> PLATFORMER
+            </label>
+            <label class="btn  btn-lg btn-secondary btn-dark border border-white text-left rounded">
+              <input type="radio" name="options" id="optionRACING" autocomplete="off"> RACING
+            </label>
+            <label class="btn  btn-lg btn-secondary btn-dark border border-white text-left rounded">
+              <input type="radio" name="options" id="optionRHYTHM" autocomplete="off"> RHYTHM
+            </label>
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
+              <input type="radio" name="options" id="optionRPG" autocomplete="off"> RPG
+            </label>
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
+              <input type="radio" name="options" id="optionSPOR" autocomplete="off"> SPORTS
+            </label>
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left">
+              <input type="radio" name="options" id="optionSTRAT" autocomplete="off"> STRATEGY
+            </label>
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left"
+              style="border-bottom-right-radius: 15px 15px;">
+              <input type="radio" name="options" id="optionVN" autocomplete="off"> VISUAL NOVEL
+            </label>
           </div>
 
           <button class="btn btn-primary" type="submit">Filter Games</button>
@@ -370,6 +320,8 @@
         </form>
 
       </div>
+
+
 
       <!--Card area-->
       <div class="col" style="margin: 16px;">
