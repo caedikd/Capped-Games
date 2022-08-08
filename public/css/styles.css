@@ -58,6 +58,13 @@ body { /*default body style (black Verdana)*/
   }
 }
 
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{   }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}	
+
 /* .search-bar{
   
 } */
@@ -97,5 +104,26 @@ figcaption {
   width: auto;
 }
 
+/* Dropdown blog */
+.dropdown-item {
+  font-family: 'Poppins', sans-serif;
+  color: #766B8E;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* bold black font */
+.bold-black {
+  font-family: 'Poppins', sans-serif;
+  color: #212121;
+  font-weight: 700;
+}
+
+/* Images for article pages in rows */
+.double-images {
+  width: 375px;
+  height: 260px;
+  border-radius: 5px;
+}
 
 
