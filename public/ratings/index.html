@@ -6,386 +6,516 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
   <!-- Load the Paper.js library (from http://paperjs.org/) -->
   <!--script type="text/javascript" src="js/paper-full.js"></script-->
 
   <!-- add Bootstrap 4 (from https://getbootstrap.com/docs/4.0/getting-started/download/)-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
   <!-- add jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <!-- add Bootstrap js-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
 
 
   <!--add the Google Material Symbols Font (from https://fonts.google.com/icons ) -->
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 
   <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
+    }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
 
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
 
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
 
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
 
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
 
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
+    /* Custom */
+    .gamecard {
+      width: 300px;
+      height: 100%;
+      text-align: center;
+      margin-right: 16px;
+      margin-bottom: 16px;
+    }
 
-      /* Custom */
-      .gamecard {
-        width: 300px;
-        height: 100%;
-        text-align: center;
-        margin-right: 16px;
-        margin-bottom: 16px;
-      }
+    .col {
+      margin-bottom: 16px;
+    }
 
-      .col {
-        margin-bottom: 16px;
-      }
+    .text-platforms {
+      font-style: italic;
+    }
 
-      .text-platforms {
-        font-style: italic;
-      }
+    /*Stackoverflow: https://stackoverflow.com/questions/26101774/how-to-trim-off-image-in-css*/
+    div.trim {
+      max-height: 300px;
+      max-width: 100%;
+      overflow: hidden;
 
-      /*Stackoverflow: https://stackoverflow.com/questions/26101774/how-to-trim-off-image-in-css*/
-      div.trim {
-        max-height:300px;
-        max-width: 100%;
-        overflow: hidden;
-        
-      }
-      /*End Stackoverflow*/
+    }
 
-      .card-img-top.adjust {
-        position: relative;
-        top: -30%;
-      }
+    /*End Stackoverflow*/
 
-      .critic-score {
-        background-color: #00306f;
-        color: #fff;
-        width: 2em;
-        height: 2em;
-        line-height: 2em;
-        border-radius: 6px;
-        text-align: center;
-        vertical-align: middle;
-        font-weight: bold;
-        font-size: 30px;
-        margin: auto;
-        /*margin-left: 32px;*/
-        
-      }
-      .user-score {
-        background-color: #00306f;
-        color: #fff;
-        width: 2em;
-        height: 2em;
-        line-height: 2em;
-        border-radius: 50%;
-        text-align: center;
-        vertical-align: middle;
-        font-weight: bold;
-        font-size: 30px;
-        margin: auto;
-      }
+    .card-img-top.adjust {
+      position: relative;
+      top: -30%;
+    }
 
-      .score-0-20 {
-        background-color: #F6757A;
-      }
+    .critic-score {
+      background-color: #00306f;
+      color: #fff;
+      width: 2em;
+      height: 2em;
+      line-height: 2em;
+      border-radius: 6px;
+      text-align: center;
+      vertical-align: middle;
+      font-weight: bold;
+      font-size: 30px;
+      margin: auto;
+      /*margin-left: 32px;*/
 
-      .score-21-40 {
-        background-color: #CD7B8A;
-      }
+    }
 
-      .score-41-60 {
-        background-color: #7B87AB;
-      }
+    .user-score {
+      background-color: #00306f;
+      color: #fff;
+      width: 2em;
+      height: 2em;
+      line-height: 2em;
+      border-radius: 50%;
+      text-align: center;
+      vertical-align: middle;
+      font-weight: bold;
+      font-size: 30px;
+      margin: auto;
+    }
 
-      .score-61-80 {
-        background-color: #528DBB;
-      }
+    .score-0-20 {
+      background-color: #F6757A;
+    }
 
-      .score-81-90 {
-        background-color: #2993CB;
-      }
+    .score-21-40 {
+      background-color: #CD7B8A;
+    }
 
-      .score-90-100 {
-        background-color: #0099DB;
-      }
+    .score-41-60 {
+      background-color: #7B87AB;
+    }
 
-    </style>
-  </head>
+    .score-61-80 {
+      background-color: #528DBB;
+    }
 
-  <body>
+    .score-81-90 {
+      background-color: #2993CB;
+    }
 
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand ml-5" href="#" style ="color:#00306f"><h4 style = "font-weight: 700;">Capped Games</h4></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item  m-1 ml-5 mr-5" style ="font-weight: 700;">
-              <a class="nav-link" href="#" style = "color:#766B8E">Test</a>
-            </li>
-            <li class="nav-item m-1 ml-5 mr-5" style ="font-weight: 700;">
-              <a class="nav-link" href="#" style = "color:#766B8E">Blog</a>
-            </li>
-            <li class="nav-item m-1 ml-5 mr-5" style ="font-weight: 700;">
-              <a class="nav-link" href="#" style = "color:#766B8E">FAQ</a>
-            </li>
-            <li class="nav-item m-1 ml-5 mr-5" style ="font-weight: 700;">
-              <a class="nav-link" href="#" style = "color:#766B8E">Sign in</a>
-            </li>
-          </ul>
+    .score-90-100 {
+      background-color: #0099DB;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand ml-5" href="#" style="color:#00306f">
+        <h4 style="font-weight: 700;">Capped Games</h4>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item  m-1 ml-5 mr-5" style="font-weight: 700;">
+            <a class="nav-link" href="#" style="color:#766B8E">Test</a>
+          </li>
+          <li class="nav-item m-1 ml-5 mr-5" style="font-weight: 700;">
+            <a class="nav-link" href="#" style="color:#766B8E">Blog</a>
+          </li>
+          <li class="nav-item m-1 ml-5 mr-5" style="font-weight: 700;">
+            <a class="nav-link" href="#" style="color:#766B8E">FAQ</a>
+          </li>
+          <li class="nav-item m-1 ml-5 mr-5" style="font-weight: 700;">
+            <a class="nav-link" href="#" style="color:#766B8E">Sign in</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Game Accessibility Ratings</h1>
+          <p class="lead text-muted">A record of how well published titles stand up to certain accessibility standards,
+            according to accessibility experts and site users.</p>
         </div>
-      </nav>
-    </header>
+      </div>
+    </section>
 
 
-    <main>
+    <div class="row" style="background-color: aliceblue; margin: auto">
 
-      <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Game Accessibility Ratings</h1>
-            <p class="lead text-muted">A record of how well published titles stand up to certain accessibility standards, according to accessibility experts and site users.</p>
-          </div>
-        </div>
-      </section>
-    
-      <div style="margin: 32px; padding: 16px">
-        
-        <div class="row">
-          
-        <!--Card area-->
-          <div class="col">
-            <div class="container-fluid">
-              <div class="row" style="margin: auto">
+      <!--Filter menu-->
+      <div class="col" style="background-color: #bab3cb; min-width: 260px; 
+            max-width: 260px; height: fit-content; margin: 16px; margin-left: 0; padding: 16px;">
 
-                <div class="card gamecard">
-                  <div class="trim">
-                    <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg"
-                    aria-label="Card Thumbnail" focusable="false"
-                    src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/3501f2e8a233c4273f0fe33f739378b0.jpg">
-                  </div>
+        <form class="p-2 mb-2">
 
-                  <div class="card-body">
-                    <h5 class="card-title"> <a href="index.html">Devil Survivor 2: Record Breaker</a></h5>
-                    <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2012</h6>
-                    <h6 class="card-subtitle mb-2 text-muted text-platforms">3DS</h6>
-                    <p class="card-text">Total coverage score:</p>
+          <h3>Filter titles:</h3>
 
-                    <div class="row">
-                      <div class="col">
-                        <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                        <div class="critic-score score-90-100">
-                          <span>100</span>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                        <div class="user-score score-0-20">
-                          <span>1</span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
+          <label for="filter_sort-by">Sort:</label>
 
-                  <div class="card-footer">
-                    <small>JRPG, Tactical, Turn-Based, Visual Novel</small>
-                  </div>
-
-                </div>
-
-                <div class="card gamecard">
-                  <div class="trim">
-                    <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg"
-                    aria-label="Card Thumbnail" focusable="false"
-                    src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/3501f2e8a233c4273f0fe33f739378b0.jpg">
-                  </div>
-
-                  <div class="card-body">
-                    <h5 class="card-title"> <a href="index.html">Devil Survivor 2: Record Breaker</a></h5>
-                    <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2012</h6>
-                    <h6 class="card-subtitle mb-2 text-muted text-platforms">3DS</h6>
-                    <p class="card-text">Total coverage score:</p>
-
-                    <div class="row">
-                      <div class="col">
-                        <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                        <div class="critic-score score-90-100">
-                          <span>100</span>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                        <div class="user-score score-0-20">
-                          <span>1</span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-
-                  <div class="card-footer">
-                    <small>JRPG, Tactical, Turn-Based, Visual Novel</small>
-                  </div>
-
-                </div>
-
-                <div class="card gamecard">
-                  <div class="trim">
-                    <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg"
-                    aria-label="Card Thumbnail" focusable="false"
-                    src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/3501f2e8a233c4273f0fe33f739378b0.jpg">
-                  </div>
-
-                  <div class="card-body">
-                    <h5 class="card-title"> <a href="index.html">Devil Survivor 2: Record Breaker</a></h5>
-                    <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2012</h6>
-                    <h6 class="card-subtitle mb-2 text-muted text-platforms">3DS</h6>
-                    <p class="card-text">Total coverage score:</p>
-
-                    <div class="row">
-                      <div class="col">
-                        <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                        <div class="critic-score score-90-100">
-                          <span>100</span>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                        <div class="user-score score-0-20">
-                          <span>1</span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-
-                  <div class="card-footer">
-                    <small>JRPG, Tactical, Turn-Based, Visual Novel</small>
-                  </div>
-
-                </div>
-
-                
-              </div>
-
-              <!--Page numbers-->
-              <div class="row">
-                <div class="col">
-                  <ul class="pagination pagination-lg flex-wrap">
-                    <li class="page-item disabled"><a class="page-link">Previous</a></li>
-                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                  </ul>
+          <!--Sort by: Player rating, critic rating, game name, year released-->
+          <div class="row" style="margin-bottom: 16px">
+            <div class="col" style="margin-bottom: 8px">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                  aria-expanded="false" id="filter_sort-by">
+                  Player Rating
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Expert Rating</a>
+                  <a class="dropdown-item" href="#">Game Name</a>
+                  <a class="dropdown-item" href="#">Year Released</a>
                 </div>
               </div>
+            </div>
 
-
+            <!--Ascending switch-->
+            <div class="col" style="margin: auto">
+              <div class="custom-control custom-switch">
+                <input type="checkbox" checked class="custom-control-input" id="filter_ascending">
+                <label class="custom-control-label" for="filter_ascending">Ascending</label>
+              </div>
             </div>
           </div>
 
-          <!--Filter menu-->
-          <div class="col-sm-2">
+          <!--Sort by: Player rating, critic rating, game name, year released-->
+          <div class="row">
+            <div class="col">
+              <div class="dropdown">
+                <label for="filter_sort-by">Coverage score to display:</label>
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                  aria-expanded="false" id="filter_sort-by">
+                  Total coverage
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Auditory</a>
+                  <a class="dropdown-item" href="#">Cognitive</a>
+                  <a class="dropdown-item" href="#">Motor</a>
+                  <a class="dropdown-item" href="#">Visual</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            <div>
-              <form class="p-2 mb-2 border-bottom">
+          <!--Genres-->
+          <div id="genre-list" style="margin-bottom: 16px">
+            <h5>Genres:</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Action
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Adventure
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Competitive (Multiplayer)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Competitive (Solo)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Cooperative Multiplayer
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Fighting
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                FPS
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                JRPG
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Platformer
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Puzzle
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                RPG
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Tactical/Strategy
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Third-Person Shooter
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Turn-Based
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Visual Novel
+              </label>
+            </div>
+          </div>
 
-                <label class="form-label">Filter titles:</label>
+          <button class="btn btn-primary" type="submit">Filter Games</button>
+
+        </form>
+
+      </div>
+
+      <!--Card area-->
+      <div class="col" style="margin: 16px;">
+        <div class="container-fluid">
+          <div class="row" style="margin: auto">
+
+            <div class="card gamecard">
+              <div class="trim">
+                <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg" aria-label="Card Thumbnail"
+                  focusable="false"
+                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/3501f2e8a233c4273f0fe33f739378b0.jpg">
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title"> <a href="index.html">Devil Survivor 2: Record Breaker</a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2012</h6>
+                <h6 class="card-subtitle mb-2 text-muted text-platforms">3DS</h6>
+                <p class="card-text">Total coverage score:</p>
 
                 <div class="row">
                   <div class="col">
-                    <div class="dropdown">
-                      <label for="filter_sort-by">Sort by:</label>
-                      <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false" id="filter_sort-by">
-                        Player Rating
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Critic Rating</a>
-                        <a class="dropdown-item" href="#">Game Name</a>
-                        <a class="dropdown-item" href="#">Year Released</a>
-                      </div>
+                    <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                    <div class="critic-score score-90-100">
+                      <span>100</span>
                     </div>
                   </div>
-                    
-                  <div class="col" style="margin: auto">
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" checked class="custom-control-input" id="filter_ascending">
-                      <label class="custom-control-label" for="filter_ascending">Ascending</label>
+                  <div class="col">
+                    <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                    <div class="user-score score-0-20">
+                      <span>1</span>
                     </div>
                   </div>
                 </div>
 
-              </form>
+              </div>
+
+              <div class="card-footer">
+                <small>JRPG, Tactical, Turn-Based, Visual Novel</small>
+              </div>
+
             </div>
 
+            <div class="card gamecard">
+              <div class="trim">
+                <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg" aria-label="Card Thumbnail"
+                  focusable="false"
+                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/3501f2e8a233c4273f0fe33f739378b0.jpg">
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title"> <a href="index.html">Devil Survivor 2: Record Breaker</a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2012</h6>
+                <h6 class="card-subtitle mb-2 text-muted text-platforms">3DS</h6>
+                <p class="card-text">Total coverage score:</p>
+
+                <div class="row">
+                  <div class="col">
+                    <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                    <div class="critic-score score-90-100">
+                      <span>100</span>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                    <div class="user-score score-0-20">
+                      <span>1</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card-footer">
+                <small>JRPG, Tactical, Turn-Based, Visual Novel</small>
+              </div>
+
+            </div>
+
+            <div class="card gamecard">
+              <div class="trim">
+                <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg" aria-label="Card Thumbnail"
+                  focusable="false"
+                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/dcd5211a30daec1c3c68c884dd2fd1e4.jpg">
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title"> <a href="index.html">Shin Megami Tensei: Devil Summoner: Raidou Kuzunoha vs The
+                    Soulless Army</a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2009</h6>
+                <h6 class="card-subtitle mb-2 text-muted text-platforms">PS2, PS3</h6>
+                <p class="card-text">Total coverage score:</p>
+
+                <div class="row">
+                  <div class="col">
+                    <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                    <div class="critic-score score-90-100">
+                      <span>1</span>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                    <div class="user-score score-0-20">
+                      <span>100</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card-footer">
+                <small>Action, Adventure, JRPG, Mystery</small>
+              </div>
+
+            </div>
+
+
           </div>
+
+          <!--Page numbers-->
+          <div class="row">
+            <div class="col">
+              <ul class="pagination pagination-lg flex-wrap">
+                <li class="page-item disabled"><a class="page-link">Previous</a></li>
+                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </div>
+          </div>
+
 
         </div>
       </div>
 
-      
-      <script src="/ratings/ratings.js">
-      </script>
-    
-    </main>
 
-  </body>
+
+    </div>
+
+
+
+    <script src="/ratings/ratings.js">
+    </script>
+
+  </main>
+
+</body>
 
 </html>
