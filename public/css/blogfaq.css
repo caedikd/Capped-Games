@@ -1,10 +1,7 @@
 * {
     box-sizing: border-box;
   }
-  body { /*default body style (black Verdana)*/
-    font-family:Serif;
-    color:#000000; 
-  }
+  
   
   .menu { /* menu style */
     float: left;
