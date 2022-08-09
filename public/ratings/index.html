@@ -83,7 +83,6 @@
     /* Custom */
     .gamecard {
       width: 300px;
-      height: 100%;
       text-align: center;
       margin-right: 16px;
       margin-bottom: 16px;
@@ -97,14 +96,15 @@
       font-style: italic;
     }
 
-    /*Stackoverflow: https://stackoverflow.com/questions/26101774/how-to-trim-off-image-in-css*/
+    /*Stackoverflow: 
+      https://stackoverflow.com/questions/26101774/how-to-trim-off-image-in-css
+    */
     div.trim {
       max-height: 300px;
       max-width: 100%;
       overflow: hidden;
 
     }
-
     /*End Stackoverflow*/
 
     .card-img-top.adjust {
@@ -124,8 +124,6 @@
       font-weight: bold;
       font-size: 30px;
       margin: auto;
-      /*margin-left: 32px;*/
-
     }
 
     .user-score {
@@ -162,7 +160,7 @@
       background-color: #2993CB;
     }
 
-    .score-90-100 {
+    .score-91-100 {
       background-color: #0099DB;
     }
 
@@ -176,9 +174,16 @@
       width: 100%
     }
 
-    .btn-dark:hover, .btn-dark:active, .btn-dark:focus, .btn-dark:not(:disabled):not(.disabled).active {
+    .btn-dark:hover,
+    .btn-dark:active,
+    .btn-dark:focus,
+    .btn-dark:not(:disabled):not(.disabled).active {
       background-color: #766B8E !important;
       border-color: #fff !important;
+    }
+
+    .material-icons.md-18 {
+      font-size: 18px;
     }
   </style>
 </head>
@@ -234,7 +239,8 @@
       <!--Filter menu-->
       <div class="col" style="background-color: #fff; min-width: 260px; 
             max-width: 260px; height: fit-content; padding: 0">
-        <div class="mb-2" style="background-color: #766B8E; padding: 4px; padding-left: 16px; color: #fff; margin-bottom: 8px">
+        <div class="mb-2"
+          style="background-color: #766B8E; padding: 4px; padding-left: 16px; color: #fff; margin-bottom: 8px">
           <h3>Filter titles:</h3>
         </div>
         <form class="mb-2" style="padding-left: 16px; width: fit-content">
@@ -262,14 +268,15 @@
           <div class="dropdown mb-2">
             <label for="filter_sort-by">Coverage score to display:</label>
             <button class="btn btn-secondary btn-dark dropdown-toggle" type="button" data-toggle="dropdown"
-              aria-expanded="false" id="filter_sort-by">
+              aria-expanded="false" id="filter_coverage-type">
               Total coverage
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Auditory</a>
-              <a class="dropdown-item" href="#">Cognitive</a>
-              <a class="dropdown-item" href="#">Motor</a>
-              <a class="dropdown-item" href="#">Visual</a>
+              <a class="dropdown-item" id="optionTOTAL" style="display: none;">Total Coverage</a>
+              <a class="dropdown-item" id="optionAUDITORY">Auditory</a>
+              <a class="dropdown-item" id="optionCOGNITIVE">Cognitive</a>
+              <a class="dropdown-item" id="optionMOTOR">Motor</a>
+              <a class="dropdown-item" id="optionVISUAL">Visual</a>
             </div>
           </div>
 
@@ -277,37 +284,45 @@
           <div class="genre-tab">
             <h5>BY GENRE:</h5>
           </div>
-          <div class="btn-group-vertical btn-group-toggle mb-2" data-toggle="button" 
-            style="width: 100%;">
+          <div class="btn-group-vertical btn-group-toggle mb-2" data-toggle="button" style="width: 100%;">
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left">
+              <input type="radio" name="options" id="optionACT" autocomplete="off"> ACTION
+            </label>
             <label class="btn btn-lg btn-secondary btn-dark border border-white text-left">
               <input type="radio" name="options" id="optionADV" autocomplete="off"> ADVENTURE
             </label>
             <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
-              <input type="radio" name="options" id="optionCOOP" autocomplete="off"> CO-OP
+              <input type="radio" name="options" id="optionCOO" autocomplete="off"> CO-OP
+            </label>
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
+              <input type="radio" name="options" id="optionFPS" autocomplete="off"> FPS
             </label>
             <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
               <input type="radio" name="options" id="optionPVP" autocomplete="off"> MULTIPLAYER (PVP)
             </label>
             <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
-              <input type="radio" name="options" id="optionMYSTERY" autocomplete="off"> MYSTERY
-            </label>
-            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
-              <input type="radio" name="options" id="optionPLAT" autocomplete="off"> PLATFORMER
+              <input type="radio" name="options" id="optionPLA" autocomplete="off"> PLATFORMER
             </label>
             <label class="btn  btn-lg btn-secondary btn-dark border border-white text-left rounded">
-              <input type="radio" name="options" id="optionRACING" autocomplete="off"> RACING
+              <input type="radio" name="options" id="optionCAR" autocomplete="off"> RACING
             </label>
             <label class="btn  btn-lg btn-secondary btn-dark border border-white text-left rounded">
-              <input type="radio" name="options" id="optionRHYTHM" autocomplete="off"> RHYTHM
+              <input type="radio" name="options" id="optionRHY" autocomplete="off"> RHYTHM
             </label>
             <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
               <input type="radio" name="options" id="optionRPG" autocomplete="off"> RPG
             </label>
             <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
-              <input type="radio" name="options" id="optionSPOR" autocomplete="off"> SPORTS
+              <input type="radio" name="options" id="optionSPO" autocomplete="off"> SPORTS
             </label>
             <label class="btn btn-lg btn-secondary btn-dark border border-white text-left">
-              <input type="radio" name="options" id="optionSTRAT" autocomplete="off"> STRATEGY
+              <input type="radio" name="options" id="optionSTR" autocomplete="off"> STRATEGY
+            </label>
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left">
+              <input type="radio" name="options" id="optionTPS" autocomplete="off"> THIRD-PERSON SHOOTER
+            </label>
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left">
+              <input type="radio" name="options" id="optionTUR" autocomplete="off"> TURN-BASED
             </label>
             <label class="btn btn-lg btn-secondary btn-dark border border-white text-left"
               style="border-bottom-right-radius: 15px 15px;">
@@ -344,7 +359,7 @@
                 <div class="row">
                   <div class="col">
                     <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                    <div class="critic-score score-90-100">
+                    <div class="critic-score score-91-100">
                       <span>100</span>
                     </div>
                   </div>
@@ -359,7 +374,7 @@
               </div>
 
               <div class="card-footer">
-                <small>JRPG, Tactical, Turn-Based, Visual Novel</small>
+                <small>RPG, Strategy, Turn-Based, Visual Novel</small>
               </div>
 
             </div>
@@ -368,26 +383,115 @@
               <div class="trim">
                 <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg" aria-label="Card Thumbnail"
                   focusable="false"
-                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/3501f2e8a233c4273f0fe33f739378b0.jpg">
+                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/ebc3c4ea708ba63d5d4779cd4586e4fb.jpg">
               </div>
 
               <div class="card-body">
-                <h5 class="card-title"> <a href="index.html">Devil Survivor 2: Record Breaker</a></h5>
-                <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2012</h6>
-                <h6 class="card-subtitle mb-2 text-muted text-platforms">3DS</h6>
-                <p class="card-text">Total coverage score:</p>
+                <h5 class="card-title"> <a href="index.html">Granblue Fantasy</a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Cygames, 2014</h6>
+                <h6 class="card-subtitle mb-2 text-muted text-platforms">Browser</h6>
 
-                <div class="row">
-                  <div class="col">
-                    <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                    <div class="critic-score score-90-100">
-                      <span>100</span>
+                <div id="CoverageScore">
+                  <span class="material-symbols-outlined md-18">
+                    star
+                  </span>
+                  <p class="card-text" style="padding: auto">
+                    Total coverage score:
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-0-20">
+                        <span>20</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-0-20">
+                        <span>15</span>
+                      </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                    <div class="user-score score-0-20">
-                      <span>1</span>
+                </div>
+
+                <div id="AuditoryScore">
+                  <span class="material-symbols-outlined">
+                    hearing
+                  </span>
+                  <p class="card-text">Auditory coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-0-20">
+                        <span>10</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-0-20">
+                        <span>6</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="CognitiveScore">
+                  <span class="material-symbols-outlined">
+                    psychology
+                  </span>
+                  <p class="card-text">Cognitive coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-21-40">
+                        <span>32</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-21-40">
+                        <span>23</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="MotorScore">
+                  <span class="material-symbols-outlined">
+                    back_hand
+                  </span>
+                  <p class="card-text">Motor coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-41-60">
+                        <span>44</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-21-40">
+                        <span>39</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="VisualScore">
+                  <span class="material-symbols-outlined">visibility</span>
+                  <p class="card-text">Visual coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-21-40">
+                        <span>30</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-21-40">
+                        <span>37</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -395,7 +499,7 @@
               </div>
 
               <div class="card-footer">
-                <small>JRPG, Tactical, Turn-Based, Visual Novel</small>
+                <small>RPG, Co-op, Turn-Based, Visual Novel</small>
               </div>
 
             </div>
@@ -413,17 +517,16 @@
                 <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2009</h6>
                 <h6 class="card-subtitle mb-2 text-muted text-platforms">PS2, PS3</h6>
                 <p class="card-text">Total coverage score:</p>
-
                 <div class="row">
                   <div class="col">
                     <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                    <div class="critic-score score-90-100">
+                    <div class="critic-score score-0-20">
                       <span>1</span>
                     </div>
                   </div>
                   <div class="col">
                     <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                    <div class="user-score score-0-20">
+                    <div class="user-score score-91-100">
                       <span>100</span>
                     </div>
                   </div>
@@ -432,7 +535,7 @@
               </div>
 
               <div class="card-footer">
-                <small>Action, Adventure, JRPG, Mystery</small>
+                <small>Action, Adventure, RPG</small>
               </div>
 
             </div>
