@@ -1,7 +1,8 @@
-.text-size{
-    font-size: medium;
-}
 
+.material-symbols-outlined {
+  vertical-align: middle;
+
+}
 .title-flex{
     display: flex;
     width: 100%;
