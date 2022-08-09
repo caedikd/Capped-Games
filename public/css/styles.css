@@ -4,6 +4,7 @@
 body { /*default body style (black Verdana)*/
   font-family:Serif;
   color:#000000; 
+  background-color: #1e1f1e;
 }
 
 .menu { /* menu style */
@@ -69,7 +70,7 @@ body { /*default body style (black Verdana)*/
   
 } */
 .background{
-  background-color:#DFEDEA ;
+  background-color: #DFEDEA;
 }
 
 
