@@ -55,13 +55,71 @@ $(function () {
             default: $(".CoverageScore").show();
         }
 
-        console.log("Elements hidden. Key: " + key);
+        //console.log("Elements hidden. Key: " + key);
     }
+
+    const all_genre_options = [
+        "optionACT", "optionADV", "optionCOO", "optionFPS", "optionPVP",
+        "optionPLA", "optionPUZ", "optionCAR", "optionRHY", "optionRPG",
+        "optionSPO", "optionSTR", "optionTPS", "optionTUR", "optionVN"
+    ];
+    //From Stackoverflow: https://stackoverflow.com/questions/5424488/how-to-search-for-a-string-inside-an-array-of-strings 
+    function searchStringInArray (str, strArray) {
+        for (let j=0; j<strArray.length; j++) {
+            if (strArray[j].match(str)) return j;
+        }
+        return -1;
+    }
+
+    const all_genre_classes = [
+        ".genre_ACT", ".genre_ADV", ".genre_COO", ".genre_FPS", ".genre_PVP",
+        ".genre_PLA", ".genre_PUZ", ".genre_CAR", ".genre_RHY", ".genre_RPG",
+        ".genre_SPO", ".genre_STR", ".genre_TPS", ".genre_TUR", ".genre_VN"
+    ];
+    const visible_genres = [];
 
     $(".btn-lg").click(function (e) {
         var idClicked = e.target.id;
-        console.log("Button clicked: " + idClicked);
+        
+        if (idClicked) {
+            console.log("Button clicked: " + idClicked);
+            //var index = searchStringInArray(idClicked, all_genre_options);
+
+            var classname = idClicked.replace("option", "");
+            classname = ".genre_" + classname;
+
+            if (searchStringInArray(classname, visible_genres) != -1) {
+                console.log("Genre found. Removing.");
+                visible_genres.splice(visible_genres.indexOf(classname), 1);
+            }
+            else {
+                visible_genres.push(classname);
+            }
+            console.log(visible_genres);
+            filter_by_genre();
+
+        }
+        
     });
+
+    function filter_by_genre() {
+        if (visible_genres.length <= 0) { //show all if visible_genres is empty
+            for (let i = 0; i < all_genre_classes.length; i++) {
+                $(all_genre_classes[i]).show();
+            }
+            return;
+        } else {
+            for (let i = 0; i < all_genre_classes.length; i++) {
+                $(all_genre_classes[i]).hide();
+            }
+            var showme = "";
+            for (let i = 0; i < visible_genres.length; i++) {
+                showme += visible_genres[i];
+            }
+            $(showme).show();
+        }
+        
+    }
 
     $("#filter_sort-by").click(function (e) {
         console.log("Filter Sort clicked: " + e.target.id);
@@ -72,7 +130,7 @@ $(function () {
     });
 
     $(".dropdown-menu").click(function (e) {
-        console.log("Menu item: " + e.target.id);
+        //console.log("Menu item: " + e.target.id);
         
         option = e.target.id;
         var key = getOptionNumber(option);
@@ -82,9 +140,9 @@ $(function () {
             updateCoverageScoreLabel(key);
         }
         else if (option.indexOf("sort") != -1) {
+            console.log("Not supported.");
 
         }
-
     });
 
     function getOptionNumber(option) {
@@ -106,8 +164,6 @@ $(function () {
         return -1;
     }
 
-    
-
     function updateCoverageScoreLabel(key) {
         const coverage_types = [
             $("#optionTOTAL"),
@@ -117,8 +173,8 @@ $(function () {
             $("#optionVISUAL")
         ];
         var optionToShow = coverage_types[key];
-        console.log(coverage_type_label.text() + " is the current label");
-        console.log(optionToShow.text() + ": show");
+        //console.log(coverage_type_label.text() + " is the current label");
+        //console.log(optionToShow.text() + ": show");
         coverage_type_label.text(optionToShow.text());
         for (let i = 0; i < coverage_types.length; i++) {
             coverage_types[i].show();
@@ -128,4 +184,4 @@ $(function () {
     }
 
 
-});
+});2

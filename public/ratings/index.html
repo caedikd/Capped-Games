@@ -228,7 +228,9 @@
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-light">Game Accessibility Ratings</h1>
           <p class="lead text-muted">A record of how well published titles stand up to certain accessibility standards,
-            according to accessibility experts and site users.</p>
+            according to accessibility experts and site users*.</p>
+
+          <p>*Scores are placeholder and do not accurately reflect anything at this point in time.</p>
         </div>
       </div>
     </section>
@@ -245,12 +247,12 @@
         </div>
         <form class="mb-2" style="padding-left: 16px; width: fit-content">
 
-          <label for="filter_sort-by">Sort:</label>
+          <label for="filter_sort-by">Sort (To be added…):</label>
 
           <!--Sort by: Player rating, critic rating, game name, year released-->
           <div class="dropdown">
             <button class="btn btn-secondary btn-dark dropdown-toggle" type="button" data-toggle="dropdown"
-              aria-expanded="false" id="filter_sort-by">
+              aria-expanded="false" id="filter_sort-by" disabled>
               Expert Rating
             </button>
             <div class="dropdown-menu">
@@ -261,8 +263,8 @@
             </div>
           </div>
           <div class="custom-control custom-switch mb-2">
-            <input type="checkbox" class="custom-control-input" id="filter_ascending">
-            <label class="custom-control-label" for="filter_ascending">Ascending</label>
+            <input type="checkbox" class="custom-control-input" id="filter_ascending" disabled>
+            <label class="custom-control-label" for="filter_ascending">High to low</label>
           </div>
 
           <!--Sort by: Player rating, critic rating, game name, year released-->
@@ -304,6 +306,9 @@
             <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
               <input type="radio" name="options" id="optionPLA" autocomplete="off"> PLATFORMER
             </label>
+            <label class="btn btn-lg btn-secondary btn-dark border border-white text-left rounded">
+              <input type="radio" name="options" id="optionPUZ" autocomplete="off"> PUZZLE
+            </label>
             <label class="btn  btn-lg btn-secondary btn-dark border border-white text-left rounded">
               <input type="radio" name="options" id="optionCAR" autocomplete="off"> RACING
             </label>
@@ -337,24 +342,27 @@
 
       </div>
 
-
-
       <!--Card area-->
       <div class="col" style="margin: 16px;">
         <div class="container-fluid">
           <div class="row" style="margin: auto">
 
-            <div class="card gamecard">
+            <!--The Last of Us Part 2-->
+            <div class="card gamecard genre_ACT genre_ADV genre_RPG">
               <div class="trim">
                 <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg" aria-label="Card Thumbnail"
                   focusable="false"
-                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/3501f2e8a233c4273f0fe33f739378b0.jpg">
+                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/55655e3296788419699ec577c7a76f6b.jpg">
               </div>
 
               <div class="card-body">
-                <h5 class="card-title"> <a href="index.html">Devil Survivor 2: Record Breaker</a></h5>
-                <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2012</h6>
-                <h6 class="card-subtitle mb-2 text-muted text-platforms">3DS</h6>
+                <h5 class="card-title"> <a href="index.html">The Last of Us Part II</a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Naughty Dog, 2020</h6>
+                <h6 class="card-subtitle mb-2 text-muted text-platforms">PS4</h6>
+                <br>
+                <br>
+                <br>
+                
                 <div class="CoverageScore">
                   <span class="material-symbols-outlined md-18">
                     star
@@ -365,14 +373,14 @@
                   <div class="row">
                     <div class="col">
                       <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                      <div class="critic-score score-0-20">
-                        <span>92</span>
+                      <div class="critic-score score-91-100">
+                        <span>98</span>
                       </div>
                     </div>
                     <div class="col">
                       <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                      <div class="user-score score-0-20">
-                        <span>76</span>
+                      <div class="user-score score-91-100">
+                        <span>99</span>
                       </div>
                     </div>
                   </div>
@@ -386,14 +394,14 @@
                   <div class="row">
                     <div class="col">
                       <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                      <div class="critic-score score-0-20">
-                        <span>80</span>
+                      <div class="critic-score score-91-100">
+                        <span>99</span>
                       </div>
                     </div>
                     <div class="col">
                       <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                      <div class="user-score score-0-20">
-                        <span>63</span>
+                      <div class="user-score score-91-100">
+                        <span>100</span>
                       </div>
                     </div>
                   </div>
@@ -407,14 +415,142 @@
                   <div class="row">
                     <div class="col">
                       <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                      <div class="critic-score score-21-40">
-                        <span>95</span>
+                      <div class="critic-score score-91-100">
+                        <span>96</span>
                       </div>
                     </div>
                     <div class="col">
                       <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                      <div class="user-score score-21-40">
-                        <span>80</span>
+                      <div class="user-score score-91-100">
+                        <span>97</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="MotorScore">
+                  <span class="material-symbols-outlined">
+                    back_hand
+                  </span>
+                  <p class="card-text">Motor coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-91-100">
+                        <span>99</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-91-100">
+                        <span>98</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="VisualScore">
+                  <span class="material-symbols-outlined">visibility</span>
+                  <p class="card-text">Visual coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-91-100">
+                        <span>98</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-91-100">
+                        <span>99</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card-footer">
+                <small>Action, Adventure, RPG</small>
+              </div>
+
+            </div>
+
+            <!--Portal-->
+            <div class="card gamecard genre_ACT genre_ADV genre_FPS genre_PLA genre_PUZ">
+              <div class="trim">
+                <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg" aria-label="Card Thumbnail"
+                  focusable="false"
+                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/46d78b33d43f3970d728a5e3f52440a2.jpg">
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title"> <a href="index.html">Portal</a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Valve, 2007</h6>
+                <h6 class="card-subtitle mb-2 text-muted text-platforms">Windows, Xbox 360, PS3, PC, Android, Nintendo Switch</h6>
+                <br>
+                <br>
+
+                <div class="CoverageScore">
+                  <span class="material-symbols-outlined md-18">
+                    star
+                  </span>
+                  <p class="card-text" style="padding: auto">
+                    Total coverage score:
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-81-90">
+                        <span>85</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-81-90">
+                        <span>87</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="AuditoryScore">
+                  <span class="material-symbols-outlined">
+                    hearing
+                  </span>
+                  <p class="card-text">Auditory coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-81-90">
+                        <span>88</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-91-100">
+                        <span>92</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="CognitiveScore">
+                  <span class="material-symbols-outlined">
+                    psychology
+                  </span>
+                  <p class="card-text">Cognitive coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-41-60">
+                        <span>52</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-61-80">
+                        <span>67</span>
                       </div>
                     </div>
                   </div>
@@ -429,12 +565,140 @@
                     <div class="col">
                       <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
                       <div class="critic-score score-41-60">
-                        <span>99</span>
+                        <span>52</span>
                       </div>
                     </div>
                     <div class="col">
                       <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                      <div class="user-score score-21-40">
+                      <div class="user-score score-61-80">
+                        <span>66</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="VisualScore">
+                  <span class="material-symbols-outlined">visibility</span>
+                  <p class="card-text">Visual coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-91-100">
+                        <span>95</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-91-100">
+                        <span>92</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card-footer">
+                <small>Action, Adventure, FPS, Platformer, Puzzle</small>
+              </div>
+
+            </div>
+
+            <!--Devil Survivor 2-->
+            <div class="card gamecard genre_RPG genre_STR genre_TB genre_VN">
+              <div class="trim">
+                <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg" aria-label="Card Thumbnail"
+                  focusable="false"
+                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/3501f2e8a233c4273f0fe33f739378b0.jpg">
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title"> <a href="index.html">Devil Survivor 2: Record Breaker</a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2012</h6>
+                <h6 class="card-subtitle mb-2 text-muted text-platforms">3DS</h6>
+                <br>
+                <br>
+
+                <div class="CoverageScore">
+                  <span class="material-symbols-outlined md-18">
+                    star
+                  </span>
+                  <p class="card-text" style="padding: auto">
+                    Total coverage score:
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-61-80">
+                        <span>72</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-61-80">
+                        <span>65</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="AuditoryScore">
+                  <span class="material-symbols-outlined">
+                    hearing
+                  </span>
+                  <p class="card-text">Auditory coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-81-90">
+                        <span>82</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-81-90">
+                        <span>85</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="CognitiveScore">
+                  <span class="material-symbols-outlined">
+                    psychology
+                  </span>
+                  <p class="card-text">Cognitive coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-61-80">
+                        <span>80</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-61-80">
+                        <span>77</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="MotorScore">
+                  <span class="material-symbols-outlined">
+                    back_hand
+                  </span>
+                  <p class="card-text">Motor coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-81-90">
+                        <span>82</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-91-100">
                         <span>93</span>
                       </div>
                     </div>
@@ -447,14 +711,14 @@
                   <div class="row">
                     <div class="col">
                       <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                      <div class="critic-score score-21-40">
-                        <span>87</span>
+                      <div class="critic-score score-41-60">
+                        <span>55</span>
                       </div>
                     </div>
                     <div class="col">
                       <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                      <div class="user-score score-21-40">
-                        <span>67</span>
+                      <div class="user-score score-41-60">
+                        <span>43</span>
                       </div>
                     </div>
                   </div>
@@ -468,7 +732,521 @@
 
             </div>
 
-            <div class="card gamecard">
+            <!--Splatoon 2-->
+            <div class="card gamecard genre_TPS genre_PVP">
+              <div class="trim">
+                <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg" aria-label="Card Thumbnail"
+                  focusable="false"
+                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/0f409d747e1dfadd4b6317b894bb5348.jpg">
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title"> <a href="index.html">Splatoon 2</a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Nintendo, 2017</h6>
+                <h6 class="card-subtitle mb-2 text-muted text-platforms">Switch</h6>
+                <br>
+                <br>
+                <br>
+
+                <div class="CoverageScore">
+                  <span class="material-symbols-outlined md-18">
+                    star
+                  </span>
+                  <p class="card-text" style="padding: auto">
+                    Total coverage score:
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-61-80">
+                        <span>62</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-41-60">
+                        <span>50</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="AuditoryScore">
+                  <span class="material-symbols-outlined">
+                    hearing
+                  </span>
+                  <p class="card-text">Auditory coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-41-60">
+                        <span>44</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-21-40">
+                        <span>34</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="CognitiveScore">
+                  <span class="material-symbols-outlined">
+                    psychology
+                  </span>
+                  <p class="card-text">Cognitive coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-61-80">
+                        <span>63</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-61-80">
+                        <span>74</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="MotorScore">
+                  <span class="material-symbols-outlined">
+                    back_hand
+                  </span>
+                  <p class="card-text">Motor coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-0-20">
+                        <span>10</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-0-20">
+                        <span>13</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="VisualScore">
+                  <span class="material-symbols-outlined">visibility</span>
+                  <p class="card-text">Visual coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-81-90">
+                        <span>81</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-81-90">
+                        <span>86</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card-footer">
+                <small>Multiplayer (PVP), Third-Person Shooter</small>
+              </div>
+
+            </div>
+
+            <!--Taiko no Tatsujin: Drum 'n' Fun!-->
+            <div class="card gamecard genre_RHY">
+              <div class="trim">
+                <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg" aria-label="Card Thumbnail"
+                  focusable="false"
+                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/de0abea4f33d7cb182be2464031bf0d1.jpg">
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title"> <a href="index.html">Taiko no Tatsujin: Drum 'n' Fun!</a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Bandai Namco Studios, 2018</h6>
+                <h6 class="card-subtitle mb-2 text-muted text-platforms">Switch</h6>
+                <br>
+                <br>
+
+                <div class="CoverageScore">
+                  <span class="material-symbols-outlined md-18">
+                    star
+                  </span>
+                  <p class="card-text" style="padding: auto">
+                    Total coverage score:
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-41-60">
+                        <span>45</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-61-80">
+                        <span>66</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="AuditoryScore">
+                  <span class="material-symbols-outlined">
+                    hearing
+                  </span>
+                  <p class="card-text">Auditory coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-21-40">
+                        <span>22</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-0-20">
+                        <span>13</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="CognitiveScore">
+                  <span class="material-symbols-outlined">
+                    psychology
+                  </span>
+                  <p class="card-text">Cognitive coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-61-80">
+                        <span>54</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-61-80">
+                        <span>65</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="MotorScore">
+                  <span class="material-symbols-outlined">
+                    back_hand
+                  </span>
+                  <p class="card-text">Motor coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-41-60">
+                        <span>49</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-21-40">
+                        <span>33</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="VisualScore">
+                  <span class="material-symbols-outlined">visibility</span>
+                  <p class="card-text">Visual coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-61-80">
+                        <span>79</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-81-90">
+                        <span>84</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card-footer">
+                <small>Rhythm</small>
+              </div>
+
+            </div>
+
+            <!--Kirby's Air Ride-->
+            <div class="card gamecard genre_CAR">
+              <div class="trim">
+                <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg" aria-label="Card Thumbnail"
+                  focusable="false"
+                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/b83a52c035258ed43d787106b1765e35.jpg">
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title"> <a href="index.html">Kirby's Air Ride</a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">HAL Laboratory, 2003</h6>
+                <h6 class="card-subtitle mb-2 text-muted text-platforms">GameCube</h6>
+                <br>
+                <br>
+                <br>
+
+                <div class="CoverageScore">
+                  <span class="material-symbols-outlined md-18">
+                    star
+                  </span>
+                  <p class="card-text" style="padding: auto">
+                    Total coverage score:
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-41-60">
+                        <span>44</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-21-40">
+                        <span>39</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="AuditoryScore">
+                  <span class="material-symbols-outlined">
+                    hearing
+                  </span>
+                  <p class="card-text">Auditory coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-41-60">
+                        <span>50</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-41-60">
+                        <span>55</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="CognitiveScore">
+                  <span class="material-symbols-outlined">
+                    psychology
+                  </span>
+                  <p class="card-text">Cognitive coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-41-60">
+                        <span>50</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="critic-score score-41-60">
+                        <span>50</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="MotorScore">
+                  <span class="material-symbols-outlined">
+                    back_hand
+                  </span>
+                  <p class="card-text">Motor coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-21-40">
+                        <span>22</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-21-40">
+                        <span>23</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="VisualScore">
+                  <span class="material-symbols-outlined">visibility</span>
+                  <p class="card-text">Visual coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-21-40">
+                        <span>37</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="critic-score score-21-40">
+                        <span>28</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card-footer">
+                <small>Racing</small>
+              </div>
+
+            </div>
+
+            <!--Raidou 1-->
+            <div class="card gamecard genre_ACT genre_ADV genre_RPG">
+              <div class="trim">
+                <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg" aria-label="Card Thumbnail"
+                  focusable="false"
+                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/dcd5211a30daec1c3c68c884dd2fd1e4.jpg">
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title"> <a href="index.html">Shin Megami Tensei: Devil Summoner: Raidou Kuzunoha vs The
+                    Soulless Army</a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2009</h6>
+                <h6 class="card-subtitle mb-2 text-muted text-platforms">PS2, PS3</h6>
+                
+                <div class="CoverageScore">
+                  <span class="material-symbols-outlined md-18">
+                    star
+                  </span>
+                  <p class="card-text" style="padding: auto">
+                    Total coverage score:
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-41-60">
+                        <span>53</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-61-80">
+                        <span>67</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="AuditoryScore">
+                  <span class="material-symbols-outlined">
+                    hearing
+                  </span>
+                  <p class="card-text">Auditory coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-21-40">
+                        <span>32</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-0-20">
+                        <span>20</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="CognitiveScore">
+                  <span class="material-symbols-outlined">
+                    psychology
+                  </span>
+                  <p class="card-text">Cognitive coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-61-80">
+                        <span>76</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-61-80">
+                        <span>66</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="MotorScore">
+                  <span class="material-symbols-outlined">
+                    back_hand
+                  </span>
+                  <p class="card-text">Motor coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-21-40">
+                        <span>30</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-0-20">
+                        <span>19</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="VisualScore">
+                  <span class="material-symbols-outlined">visibility</span>
+                  <p class="card-text">Visual coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-61-80">
+                        <span>66</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-41-60">
+                        <span>54</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card-footer">
+                <small>Action, Adventure, RPG</small>
+              </div>
+
+            </div>
+
+            <!--Granblue Fantasy-->
+            <div class="card gamecard genre_RPG genre_COOP genre_TB genre_VN">
               <div class="trim">
                 <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg" aria-label="Card Thumbnail"
                   focusable="false"
@@ -479,6 +1257,9 @@
                 <h5 class="card-title"> <a href="index.html">Granblue Fantasy</a></h5>
                 <h6 class="card-subtitle mb-2 text-muted">Cygames, 2014</h6>
                 <h6 class="card-subtitle mb-2 text-muted text-platforms">Browser</h6>
+                <br>
+                <br>
+                <br>
 
                 <div class="CoverageScore">
                   <span class="material-symbols-outlined md-18">
@@ -593,154 +1374,11 @@
 
             </div>
 
-            <div class="card gamecard">
-              <div class="trim">
-                <img class="card-img-top adjust" xmlns="http://www.w3.org/2000/svg" aria-label="Card Thumbnail"
-                  focusable="false"
-                  src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/dcd5211a30daec1c3c68c884dd2fd1e4.jpg">
-              </div>
-
-              <div class="card-body">
-                <h5 class="card-title"> <a href="index.html">Shin Megami Tensei: Devil Summoner: Raidou Kuzunoha vs The
-                    Soulless Army</a></h5>
-                <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2009</h6>
-                <h6 class="card-subtitle mb-2 text-muted text-platforms">PS2, PS3</h6>
-                <p class="card-text">Total coverage score:</p>
-                
-                <div class="CoverageScore">
-                  <span class="material-symbols-outlined md-18">
-                    star
-                  </span>
-                  <p class="card-text" style="padding: auto">
-                    Total coverage score:
-                  </p>
-                  <div class="row">
-                    <div class="col">
-                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                      <div class="critic-score score-0-20">
-                        <span>53</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                      <div class="user-score score-0-20">
-                        <span>67</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="AuditoryScore">
-                  <span class="material-symbols-outlined">
-                    hearing
-                  </span>
-                  <p class="card-text">Auditory coverage score:</p>
-                  <div class="row">
-                    <div class="col">
-                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                      <div class="critic-score score-0-20">
-                        <span>32</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                      <div class="user-score score-0-20">
-                        <span>20</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="CognitiveScore">
-                  <span class="material-symbols-outlined">
-                    psychology
-                  </span>
-                  <p class="card-text">Cognitive coverage score:</p>
-                  <div class="row">
-                    <div class="col">
-                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                      <div class="critic-score score-21-40">
-                        <span>76</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                      <div class="user-score score-21-40">
-                        <span>66</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="MotorScore">
-                  <span class="material-symbols-outlined">
-                    back_hand
-                  </span>
-                  <p class="card-text">Motor coverage score:</p>
-                  <div class="row">
-                    <div class="col">
-                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                      <div class="critic-score score-41-60">
-                        <span>30</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                      <div class="user-score score-21-40">
-                        <span>19</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="VisualScore">
-                  <span class="material-symbols-outlined">visibility</span>
-                  <p class="card-text">Visual coverage score:</p>
-                  <div class="row">
-                    <div class="col">
-                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                      <div class="critic-score score-21-40">
-                        <span>66</span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                      <div class="user-score score-21-40">
-                        <span>54</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="card-footer">
-                <small>Action, Adventure, RPG</small>
-              </div>
-
-            </div>
-
-
-          </div>
-
-          <!--Page numbers-->
-          <div class="row">
-            <div class="col">
-              <ul class="pagination pagination-lg flex-wrap">
-                <li class="page-item disabled"><a class="page-link">Previous</a></li>
-                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              </ul>
-            </div>
           </div>
 
 
         </div>
       </div>
-
-
 
     </div>
 
