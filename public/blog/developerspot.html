@@ -1,0 +1,266 @@
+<!-- Starter code for Project 2: Creativity Canvas-->
+<!-- Lovingly prepared by Shm Garanganao Almeda-->
+<!-- for CS160 User Interface Design & Development Summer 2022 at UC Berkeley-->
+<!-- Repurposed by Lena Jeon (CS160 Su2022) -->
+<!-- Repurposed by Caedi Seim (CS160 Su2022) -->
+
+<!-- Main Blog Page -->
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- add Bootstrap 4 (from https://getbootstrap.com/docs/4.0/getting-started/download/)-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <!-- add jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!--add the Google Material Symbols Font (from https://fonts.google.com/icons ) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!-- adding fonts from Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,600&family=Source+Serif+Pro:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- adding the css doc -->
+  <link rel="stylesheet" href="../css/blogfaq.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      
+      <a class="navbar-brand bold-serif ml-5" href="#" style ="color:#00306f">
+        <h4 style = "font-family: 'Source Serif Pro', serif; font-weight: 700;">
+          <!-- Controller Icon -->
+          <span style = "color:cadetblue; padding-right: 3%;">
+            <i class="bi bi-controller"></i>
+          </span>
+          Capped Games</h4></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto" style="font-family: 'Poppins', sans-serif;">
+          <li class="nav-item  m-1 ml-5 mr-3" style ="font-weight: 700;">
+            <a class="nav-link" href="#" style = "color:#766B8E">Test</a>
+          </li>
+
+          <!-- Dropdown Blog -->
+          <li class="nav-item dropdown m-1 ml-5 mr-3" style ="font-weight: 700;">
+            <a class="nav-link  dropdown-toggle" href="../blog/index.html" data-bs-toggle="dropdown"  style = "color:#766B8E">  Blog  </a>
+             <ul class="dropdown-menu mr-1">
+             <li><a class="dropdown-item" href="../blog/new.html"> New </a></li>
+             <li><a class="dropdown-item" href="../blog/learn.html"> Learn </a></li>
+             <li><a class="dropdown-item" href="../blog/new.html"> Play </a></li>
+             </ul>
+         </li>
+
+         <li class="nav-item m-1 ml-5 mr-3" style ="font-weight: 700;">
+          <a class="nav-link" href="../faq/faq.html" style = "color:#766B8E">Rating</a>
+        </li>
+         
+          <li class="nav-item m-1 ml-5 mr-3" style ="font-weight: 700;">
+            <a class="nav-link" href="../faq/faq.html" style = "color:#766B8E">FAQ</a>
+          </li>
+          <li class="nav-item m-1 ml-5 mr-5" style ="font-weight: 700;">
+            <a class="nav-link" href="#" style = "color:#766B8E">          
+              Sign in
+              <!-- Profile Icon -->
+              <i class="bi bi-person-circle"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="container-fluid">
+      <div class="developer-spotlight">
+        <br>
+        <figcaption style="margin-top:15px; margin-bottom: 15px;"><i>DEVELOPER SPOTLIGHT</i></figcaption>
+
+        <div class="titles" style="font-size:xx-large">
+            Anna Shevets
+        </div>
+        <div class="titles">
+            Game: Luna
+        </div>
+      </div>
+
+        <br>
+        <div class="row">
+          <div class="col">
+            <figure class="text-center">
+              <img class="round-image" style="width: 75px; height: 75px; margin-bottom: 20px;" src="../img/blog-general/emilywang.jpg" alt="Photo of Emily Wang">
+              <figcaption style=" font-size:small; margin-bottom: 10px;">by Emily Wang</figcaption>
+              <figcaption style=" font-size:small; margin-bottom: 20px;">Senior Game Developer at EA</figcaption>
+              <figcaption style="font-weight: 400; font-size:x-small">posted on 8/7/2022</figcaption>
+            </figure>
+
+            <div class="col text-center" style="margin-top: 2rem; margin-bottom: 2rem; font-size: 2rem; color: cadetblue;">
+                <i class="bi bi-facebook" style=" padding-left:1rem; padding-right: 1rem;"></i>
+                <i class="bi bi-instagram" style=" padding-left:1rem; padding-right: 1rem;"></i>
+                <i class="bi bi-share-fill" style=" padding-left:1rem; padding-right: 1rem;"></i>
+            </div>
+          </div>
+
+        </div>
+
+        
+        <div class="d-flex justify-content-start ml-8 mt-1">
+            <div class="row">
+                <div class="col">
+                    <figure class="text-start">
+                        <img class="card-img-top" src="../img/blog-general/vrwheelchairlong.jpg" alt="Man in wheelchair playing a vr game." style="width: 90%; height:auto;">
+                        <figcaption class="mr-8" style="margin-bottom: 20px; text-align:start;font-weight: 400;font-size:x-small">photo by Rodnae Productions</figcaption>
+                        <figcaption  class="mr-8 mb-4" style="text-align:start; color: #212121;; font-weight: 400;font-size:small">
+                            When creating accessible games, it's important to keep in mind
+                            that there are numerous types of features that could enhance a game for accessibility purposes. 
+                            This article hopes to cover a few of those features
+                        to help you get started. This article is adapted from a Microsoft Article 
+                        <a href="https://docs.microsoft.com/en-us/windows/uwp/gaming/accessibility-for-games" style="color:#212121">
+                            here.
+                        </a> </figcaption> 
+
+                        <!-- why 1 -->
+                        <div class="titles mr-8">
+                            Why make games accessible?
+                        </div>
+                        <div class="bold-black mr-8 mb-2" style="font-size: large;">
+                            Increased gamer base
+                        </div>
+                        <figcaption  class="mr-8 mb-4" style="text-align:start; color: #212121;; font-weight: 400;font-size:small">
+                            Accessibility can help bring in a wider gamer base to your game. As a developer, this means more sales, more press, and more fun
+                            for more people. By limiting your games with complications, you are limiting your potential sales and your potential players.
+                        </figcaption> 
+                        <!-- why 2 -->
+                        <div class="bold-black mr-8 mb-2" style="font-size: large;">
+                            Better games
+                        </div>
+                        <figcaption  class="mr-8 mb-4" style="text-align:start; color: #212121;; font-weight: 400;font-size:small">
+                            Accessibility in games makes for better games. Take subtitles and captions for example. These weren't necessarily 
+                            created for accessibility preferences, but instead were popularized for people who just had a preference for gaming or watching media with captions.
+                            Now, captions are able to support gamers with disabilities as well as gamers with caption preferences. Often times, a design process
+                            that is intends to make a game more accessible will also make a game more user friendly for everyone.
+                        </figcaption>
+                        
+                        <div class="col text-center ml-11 mr-10 mt-3">
+                            <img class="card-img-top text-end" src="../img/blog-general/group-game.jpg" alt="Group of teens gaming together." style="text-align:center; width: 45%; height:auto;">
+                            <figcaption class="text-center" style="margin-bottom: 20px; text-align:start;font-weight: 400;font-size:x-small">photo by Yan Krukov. Group of Gamers</figcaption>
+
+                        </div>
+
+
+                        <!-- How -->
+                        <div class="titles mr-8">
+                            Defining disability
+                        </div>
+                        <div class="bold-black mr-8 mb-2" style="font-size: large;">
+                            Vision
+                        </div>
+                        <figcaption  class="mr-8 mb-3" style="text-align:start; color: #212121;; font-weight: 400;font-size:small">
+                            <ul class="fa-ul custom-list">
+                                <li>Medical, long-term conditions like glaucoma, cataracts, color blindness, near-sightedness, and diabetic retinopathy</li>
+                                <li>Short-term, situational conditions like a small monitor or screen size, a low resolution screen, or screen glare due to bright light sources like the sun on a monitor or mobile screen</li>
+                            </ul>
+                        </figcaption> 
+
+                        <div class="bold-black mr-8 mb-2" style="font-size: large;">
+                            Hearing
+                        </div>
+                        <figcaption  class="mr-8 mb-3" style="text-align:start; color: #212121;; font-weight: 400;font-size:small">
+                            <ul class="fa-ul custom-list">
+                                <li>Medical, long-term conditions like complete deafness or partial hearing loss due to diseases or genetics</li>
+                                <li>Short-term, situational conditions like excessive background noise, low quality audio quality, or restricted volume to avoid disturbing others</li>
+                            </ul>
+                        </figcaption> 
+
+                        <div class="bold-black mr-8 mb-2" style="font-size: large;">
+                            Motor
+                        </div>
+                        <figcaption  class="mr-8 mb-3" style="text-align:start; color: #212121;; font-weight: 400;font-size:small">
+                            <ul class="fa-ul custom-list">
+                                <li>Medical, long-term conditions like Parkinson’s disease, amyotrophic lateral sclerosis (ALS), arthritis, and muscular dystrophy</li>
+                                <li>Short-term, situational conditions like an injured hand, holding a beverage, or carrying a child in one arm</li>
+                            </ul>
+                        </figcaption> 
+
+                        <div class="bold-black mr-8 mb-2" style="font-size: large;">
+                            Cognitive
+                        </div>
+                        <figcaption  class="mr-8 mb-3" style="text-align:start; color: #212121;; font-weight: 400;font-size:small">
+                            <ul class="fa-ul custom-list">
+                                <li>Medical, long-term conditions like dyslexia, epilepsy, attention deficit hyperactivity disorder (ADHD), dementia, and amnesia</li>
+                                <li>Short-term, situational conditions like alcohol consumption, lack of sleep, or temporary distractions 
+                                like siren from an emergency vehicle driving by the house</li>
+                            </ul>
+                        </figcaption> 
+
+                        <div class="bold-black mr-8 mb-2" style="font-size: large;">
+                            Cognitive
+                        </div>
+                        <figcaption  class="mr-8 mb-3" style="text-align:start; color: #212121;; font-weight: 400;font-size:small">
+                            <ul class="fa-ul custom-list">
+                                <li>Medical, long-term conditions like dyslexia, epilepsy, attention deficit hyperactivity disorder (ADHD), dementia, and amnesia</li>
+                                <li>Short-term, situational conditions like alcohol consumption, lack of sleep, or temporary distractions 
+                                like siren from an emergency vehicle driving by the house</li>
+                            </ul>
+                        </figcaption>
+
+
+                        <div class="titles mr-8">
+                            How to make games more accessible?
+                        </div>
+                        <figcaption style="margin-top: 15px; text-align:start;font-weight: 400;font-size:x-small">photo by Tima Miroshnichenko. Older Gamers.</figcaption>
+                        <img class="left"style="width: 40%; height: auto; margin-bottom: 20px;" src="../img/blog-general/older-gamers.jpg" alt="Photo of Older Gamers">
+            
+                        
+                       
+
+                        <div class="bold-black mr-8 mb-2" style="font-size: large;">
+                            1. Take an inclusive game design approach
+                        </div>
+                        <figcaption  class="mr-8 mb-4" style="text-align:start; color: #212121;; font-weight: 400;font-size:small">
+                            Inclusive design focuses on creating products and services more accessible to a broader spectrum of consumers, including people with disabilities.
+                            To be successful, today’s game designers need to think beyond creating games that they enjoy. Game designers need
+                             to be aware of how their design decisions impact the overall accessibility of the game; the playability of
+                              the game for their entire target audience, including those with disabilities.
+                        </figcaption>
+
+
+                        <div class="bold-black mr-8 mb-2" style="font-size: large;">
+                            2. Empower gamers: Give gamers options
+                        </div>
+                        <figcaption  class="mr-8 mb-4" style="text-align:start; color: #212121;; font-weight: 400;font-size:small">
+                            Nearly every accessibility solution comes down to one of two principles. The first is giving your gamers 
+                            the options to customize their gaming experience. If you already have a huge fan base, you may have a 
+                            significant portion of your audience who do not want the experience to change in any way. That’s okay. 
+                            Give your gamers the ability to turn these features on and off, and make features configurable individually
+                            . You need to allow people to experience the game in the way that best suits their own needs and preferences.
+                        </figcaption>
+
+                        <div class="bold-black mr-8 mb-2" style="font-size: large;">
+                            3. Reinforce: Communicate information in more than one way
+                        </div>
+                        <figcaption  class="mr-8 mb-4" style="text-align:start; color: #212121;; font-weight: 400;font-size:small">
+                            The second principle is where the concept of universal design comes in, a single approach that not only
+                             brings in more players but also improves the experience for all. For example an image as well as text, 
+                             a symbol as well as colour. A map that is based on a range of different coloured markers is not only 
+                             impossible for color blind gamers to use, it is also frustrating for everyone else who must remember 
+                             what everything equates to. Adding symbols makes it a better experience for everyone.
+                        </figcaption>
+                       
+                    </figure>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+  
+
+  </body>
+
+</html>

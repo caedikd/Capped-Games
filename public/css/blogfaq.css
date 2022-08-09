@@ -130,11 +130,33 @@
   .ml-6 {
     margin-left: 5rem !important;
   }
+
+  .ml-11{
+    margin-left: -1.5rem !important;
+  }
+
+    /* margin left for bootstrap */
+    .ml-8 {
+        margin-left: 10% !important;
+      }
+
+      .mr-8 {
+        margin-right: 10% !important;
+      }
+
+      .mr-10 {
+        margin-right: 60% !important;
+      }
   
   /* margin right for bootstrap */
   .mr-10 {
     margin-right:40rem !important;
   }
-  
+
+ .left {
+    float: left;
+    padding: 5px 30px 20px 0;
+   }
+
   
   
