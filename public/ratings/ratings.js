@@ -36,20 +36,26 @@ $(function () {
 
     displayScores(0);
 
-    function displayScores(key) {
-        const scoreDivs = [
-            document.getElementById("CoverageScore"),
-            document.getElementById("AuditoryScore"),
-            document.getElementById("CognitiveScore"),
-            document.getElementById("MotorScore"),
-            document.getElementById("VisualScore")
-        ];
+    let ascending_switch = $("#filter_ascending");
+    let filter_label = $("#filter_sort-by");
+    let coverage_type_label = $("#filter_coverage-type");
 
-        scoreDivs.forEach(hideEle);
-        function hideEle(element) {
-            element.style.display = "none";
+    function displayScores(key) {
+        $(".AuditoryScore").hide();
+        $(".CognitiveScore").hide();
+        $(".MotorScore").hide();
+        $(".VisualScore").hide();
+        $(".CoverageScore").hide();
+
+        switch(key) {
+            case 1: $(".AuditoryScore").show(); break;
+            case 2: $(".CognitiveScore").show(); break;
+            case 3: $(".MotorScore").show(); break;
+            case 4: $(".VisualScore").show(); break;
+            default: $(".CoverageScore").show();
         }
-        scoreDivs[key].style.display = "block";
+
+        console.log("Elements hidden. Key: " + key);
     }
 
     $(".btn-lg").click(function (e) {
@@ -58,14 +64,68 @@ $(function () {
     });
 
     $("#filter_sort-by").click(function (e) {
-        console.log("Filter Sort clicked");
+        console.log("Filter Sort clicked: " + e.target.id);
     });
 
     $("#filter_ascending").click(function (e) {
         console.log("Ascending toggle clicked");
     });
 
-    $("#filter_coverage-type").click(function (e) {
-        console.log("Coverage type clicked");
+    $(".dropdown-menu").click(function (e) {
+        console.log("Menu item: " + e.target.id);
+        
+        option = e.target.id;
+        var key = getOptionNumber(option);
+
+        if (option.indexOf("option") != -1){
+            displayScores(key);
+            updateCoverageScoreLabel(key);
+        }
+        else if (option.indexOf("sort") != -1) {
+
+        }
+
     });
+
+    function getOptionNumber(option) {
+        if (option.indexOf("TOTAL") != -1 || option.indexOf("Expert") != -1) {
+            return 0;
+        }
+        if (option.indexOf("AUDI") != -1 || option.indexOf("Player") != -1) {
+            return 1;
+        }
+        if (option.indexOf("COGN") != -1 || option.indexOf("Title") != -1) {
+            return 2;
+        }
+        if (option.indexOf("MOTOR") != -1 || option.indexOf("Release") != -1) {
+            return 3;
+        }
+        if (option.indexOf("VISU") != -1) {
+            return 4;
+        }
+        return -1;
+    }
+
+    
+
+    function updateCoverageScoreLabel(key) {
+        const coverage_types = [
+            $("#optionTOTAL"),
+            $("#optionAUDITORY"),
+            $("#optionCOGNITIVE"),
+            $("#optionMOTOR"),
+            $("#optionVISUAL")
+        ];
+        var optionToShow = coverage_types[key];
+        console.log(coverage_type_label.text() + " is the current label");
+        console.log(optionToShow.text() + ": show");
+        coverage_type_label.text(optionToShow.text());
+        for (let i = 0; i < coverage_types.length; i++) {
+            coverage_types[i].show();
+        }
+        coverage_types[key].hide();
+
+    }
+
+
 });

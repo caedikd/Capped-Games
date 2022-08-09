@@ -251,12 +251,13 @@
           <div class="dropdown">
             <button class="btn btn-secondary btn-dark dropdown-toggle" type="button" data-toggle="dropdown"
               aria-expanded="false" id="filter_sort-by">
-              Player Rating
+              Expert Rating
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Expert Rating</a>
-              <a class="dropdown-item" href="#">Game Name</a>
-              <a class="dropdown-item" href="#">Year Released</a>
+              <a class="dropdown-item" id="sortExpert" style="display: none">Expert Rating</a>
+              <a class="dropdown-item" id="sortPlayer">Player Rating</a>
+              <a class="dropdown-item" id="sortTitle">Game Name</a>
+              <a class="dropdown-item" id="sortRelease">Year Released</a>
             </div>
           </div>
           <div class="custom-control custom-switch mb-2">
@@ -354,19 +355,107 @@
                 <h5 class="card-title"> <a href="index.html">Devil Survivor 2: Record Breaker</a></h5>
                 <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2012</h6>
                 <h6 class="card-subtitle mb-2 text-muted text-platforms">3DS</h6>
-                <p class="card-text">Total coverage score:</p>
-
-                <div class="row">
-                  <div class="col">
-                    <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                    <div class="critic-score score-91-100">
-                      <span>100</span>
+                <div class="CoverageScore">
+                  <span class="material-symbols-outlined md-18">
+                    star
+                  </span>
+                  <p class="card-text" style="padding: auto">
+                    Total coverage score:
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-0-20">
+                        <span>92</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-0-20">
+                        <span>76</span>
+                      </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                    <div class="user-score score-0-20">
-                      <span>1</span>
+                </div>
+
+                <div class="AuditoryScore">
+                  <span class="material-symbols-outlined">
+                    hearing
+                  </span>
+                  <p class="card-text">Auditory coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-0-20">
+                        <span>80</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-0-20">
+                        <span>63</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="CognitiveScore">
+                  <span class="material-symbols-outlined">
+                    psychology
+                  </span>
+                  <p class="card-text">Cognitive coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-21-40">
+                        <span>95</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-21-40">
+                        <span>80</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="MotorScore">
+                  <span class="material-symbols-outlined">
+                    back_hand
+                  </span>
+                  <p class="card-text">Motor coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-41-60">
+                        <span>99</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-21-40">
+                        <span>93</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="VisualScore">
+                  <span class="material-symbols-outlined">visibility</span>
+                  <p class="card-text">Visual coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-21-40">
+                        <span>87</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-21-40">
+                        <span>67</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -391,7 +480,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">Cygames, 2014</h6>
                 <h6 class="card-subtitle mb-2 text-muted text-platforms">Browser</h6>
 
-                <div id="CoverageScore">
+                <div class="CoverageScore">
                   <span class="material-symbols-outlined md-18">
                     star
                   </span>
@@ -414,7 +503,7 @@
                   </div>
                 </div>
 
-                <div id="AuditoryScore">
+                <div class="AuditoryScore">
                   <span class="material-symbols-outlined">
                     hearing
                   </span>
@@ -435,7 +524,7 @@
                   </div>
                 </div>
 
-                <div id="CognitiveScore">
+                <div class="CognitiveScore">
                   <span class="material-symbols-outlined">
                     psychology
                   </span>
@@ -456,7 +545,7 @@
                   </div>
                 </div>
 
-                <div id="MotorScore">
+                <div class="MotorScore">
                   <span class="material-symbols-outlined">
                     back_hand
                   </span>
@@ -477,7 +566,7 @@
                   </div>
                 </div>
 
-                <div id="VisualScore">
+                <div class="VisualScore">
                   <span class="material-symbols-outlined">visibility</span>
                   <p class="card-text">Visual coverage score:</p>
                   <div class="row">
@@ -517,17 +606,108 @@
                 <h6 class="card-subtitle mb-2 text-muted">ATLUS, 2009</h6>
                 <h6 class="card-subtitle mb-2 text-muted text-platforms">PS2, PS3</h6>
                 <p class="card-text">Total coverage score:</p>
-                <div class="row">
-                  <div class="col">
-                    <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
-                    <div class="critic-score score-0-20">
-                      <span>1</span>
+                
+                <div class="CoverageScore">
+                  <span class="material-symbols-outlined md-18">
+                    star
+                  </span>
+                  <p class="card-text" style="padding: auto">
+                    Total coverage score:
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-0-20">
+                        <span>53</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-0-20">
+                        <span>67</span>
+                      </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <p class="card-text" style="margin-bottom: 0.5em">Users</p>
-                    <div class="user-score score-91-100">
-                      <span>100</span>
+                </div>
+
+                <div class="AuditoryScore">
+                  <span class="material-symbols-outlined">
+                    hearing
+                  </span>
+                  <p class="card-text">Auditory coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-0-20">
+                        <span>32</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-0-20">
+                        <span>20</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="CognitiveScore">
+                  <span class="material-symbols-outlined">
+                    psychology
+                  </span>
+                  <p class="card-text">Cognitive coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-21-40">
+                        <span>76</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-21-40">
+                        <span>66</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="MotorScore">
+                  <span class="material-symbols-outlined">
+                    back_hand
+                  </span>
+                  <p class="card-text">Motor coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-41-60">
+                        <span>30</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-21-40">
+                        <span>19</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="VisualScore">
+                  <span class="material-symbols-outlined">visibility</span>
+                  <p class="card-text">Visual coverage score:</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Experts</p>
+                      <div class="critic-score score-21-40">
+                        <span>66</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <p class="card-text" style="margin-bottom: 0.5em">Users</p>
+                      <div class="user-score score-21-40">
+                        <span>54</span>
+                      </div>
                     </div>
                   </div>
                 </div>
